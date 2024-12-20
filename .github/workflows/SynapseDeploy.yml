@@ -1,5 +1,6 @@
 #            - name: Synapse workspace deployment
  # uses: Azure/Synapse-workspace-deployment@V1.9.1
+ on: push
   with:
     # Provide the Synapse workspace name where you want to deploy the artifacts.
     TargetWorkspaceName: 'syn-entit-devtestsynapse'
