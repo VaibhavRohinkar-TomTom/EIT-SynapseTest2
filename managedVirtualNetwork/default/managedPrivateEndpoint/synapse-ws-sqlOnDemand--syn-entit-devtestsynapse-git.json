@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-sqlOnDemand--syn-entit-devtestsynapse-git",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/276b918f-1dfb-441a-a56c-6693d845360b/resourceGroups/rg-entit-devtestsynapse/providers/Microsoft.Synapse/workspaces/syn-entit-devtestsynapse-git",
+		"groupId": "sqlOnDemand",
+		"fqdns": [
+			"syn-entit-devtestsynapse-git-ondemand.7c26c327-76e6-4301-bb7b-4bc55ac21dbb.sql.azuresynapse.net"
+		]
+	}
+}
