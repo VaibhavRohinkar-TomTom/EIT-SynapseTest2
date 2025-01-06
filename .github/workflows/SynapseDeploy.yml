@@ -23,4 +23,4 @@ jobs:
            subscriptionId: '276b918f-1dfb-441a-a56c-6693d845360b'
            tenantId: '374f8026-7b54-4a3a-b87d-328fa26ec10d'
            DeleteArtifactsNotInTemplate: 'true'
-          managedIdentity: 'False'
+           managedIdentity: 'False'
