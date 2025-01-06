@@ -13,8 +13,8 @@ jobs:
         - uses: azure/synapse-workspace-deployment@release-1.0
           with:
            TargetWorkspaceName: 'syn-entit-devtestsynapse'
-           TemplateFile: './EIT-SynapseTest2/TemplateForWorkspace.json'
-           ParametersFile: './EIT-SynapseTest2/TemplateParametersForWorkspace.json'
+           TemplateFile: './TemplateForWorkspace.json'
+           ParametersFile: './TemplateParametersForWorkspace.json'
            #OverrideArmParameters: './path of the parameters.yaml'
            environment: 'Azure Public'
            resourceGroup: 'rg-entit-devtestsynapse'
