@@ -112,7 +112,7 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"content": {
-					"query": "select 3",
+					"query": "select 4",
 					"metadata": {
 						"language": "sql"
 					},
