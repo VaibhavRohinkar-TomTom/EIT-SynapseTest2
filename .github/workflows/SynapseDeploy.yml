@@ -11,16 +11,16 @@ jobs:
         # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it.
         - uses: actions/checkout@v2
         - uses: azure/synapse-workspace-deployment@release-1.0
-        with:
-          TargetWorkspaceName: 'syn-entit-devtestsynapse'
-          TemplateFile: './EIT-SynapseTest2/TemplateForWorkspace.json'
-          ParametersFile: './EIT-SynapseTest2/TemplateParametersForWorkspace.json'
-          #OverrideArmParameters: './path of the parameters.yaml'
-          environment: 'Azure Public'
-          resourceGroup: 'rg-entit-devtestsynapse'
-          clientId: ${{secrets.CLIENTID}}
-          clientSecret:  ${{secrets.CLIENTSECRET}}
-          subscriptionId: '276b918f-1dfb-441a-a56c-6693d845360b'
-          tenantId: '374f8026-7b54-4a3a-b87d-328fa26ec10d'
-          DeleteArtifactsNotInTemplate: 'true'
+          with:
+           TargetWorkspaceName: 'syn-entit-devtestsynapse'
+           TemplateFile: './EIT-SynapseTest2/TemplateForWorkspace.json'
+           ParametersFile: './EIT-SynapseTest2/TemplateParametersForWorkspace.json'
+           #OverrideArmParameters: './path of the parameters.yaml'
+           environment: 'Azure Public'
+           resourceGroup: 'rg-entit-devtestsynapse'
+           clientId: ${{secrets.CLIENTID}}
+           clientSecret:  ${{secrets.CLIENTSECRET}}
+           subscriptionId: '276b918f-1dfb-441a-a56c-6693d845360b'
+           tenantId: '374f8026-7b54-4a3a-b87d-328fa26ec10d'
+           DeleteArtifactsNotInTemplate: 'true'
           managedIdentity: 'False'
