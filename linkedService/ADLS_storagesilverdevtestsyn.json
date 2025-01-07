@@ -1,10 +1,16 @@
 {
 	"name": "ADLS_storagesilverdevtestsyn",
 	"properties": {
+		"parameters": {
+			"SName": {
+				"type": "string",
+				"defaultValue": "storagesilverdevtestsyn"
+			}
+		},
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
-			"serviceEndpoint": "https://storagesilverdevtestsyn.blob.core.windows.net/",
+			"serviceEndpoint": "@{concat('https://',linkedService().SName,'.blob.core.windows.net/')}",
 			"accountKind": "StorageV2",
 			"credential": {
 				"referenceName": "Credential1",
