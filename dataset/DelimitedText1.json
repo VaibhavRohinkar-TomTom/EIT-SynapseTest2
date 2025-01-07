@@ -3,7 +3,10 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ADLS_storagesilverdevtestsyn",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"SName": "storagesilverdevtestsyn"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
