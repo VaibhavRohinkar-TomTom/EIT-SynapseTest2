@@ -12,13 +12,13 @@
 			"metadata": "Secure string for 'connectionString' of 'syn-entit-devtestsynapse-git-WorkspaceDefaultSqlServer'",
 			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:syn-entit-devtestsynapse-git.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
-		"ADLS_storagesilverdevtestsyn_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'ADLS_storagesilverdevtestsyn'"
-		},
 		"syn-entit-devtestsynapse-git-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://storagesilverdevtestsyn1.dfs.core.windows.net"
+		},
+		"ADLS_storagesilverdevtestsyn_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://storagesilverdevtestsyn.blob.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -430,7 +430,12 @@
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"connectionString": "[parameters('ADLS_storagesilverdevtestsyn_connectionString')]"
+					"serviceEndpoint": "[parameters('ADLS_storagesilverdevtestsyn_properties_typeProperties_serviceEndpoint')]",
+					"accountKind": "StorageV2",
+					"credential": {
+						"referenceName": "Credential1",
+						"type": "CredentialReference"
+					}
 				},
 				"connectVia": {
 					"referenceName": "AutoResolveIntegrationRuntime",
@@ -438,7 +443,8 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
+				"[concat(variables('workspaceId'), '/credentials/Credential1')]"
 			]
 		},
 		{
