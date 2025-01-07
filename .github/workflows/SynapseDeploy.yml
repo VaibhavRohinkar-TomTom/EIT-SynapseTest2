@@ -12,7 +12,7 @@ jobs:
         - uses: actions/checkout@v2
         - uses: azure/synapse-workspace-deployment@release-1.0
           with:
-           TargetWorkspaceName: 'syn-entit-devtestsynapse'
+           TargetWorkspaceName: 'syn-entit-devtestsynapse-git-target'
            TemplateFile: './syn-entit-devtestsynapse-git/TemplateForWorkspace.json'
            ParametersFile: './syn-entit-devtestsynapse-git/TemplateParametersForWorkspace.json'
            #OverrideArmParameters: './path of the parameters.yaml'
