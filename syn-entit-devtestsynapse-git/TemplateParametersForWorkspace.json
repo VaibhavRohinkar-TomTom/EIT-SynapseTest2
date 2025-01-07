@@ -9,7 +9,7 @@
 			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:syn-entit-devtestsynapse-git.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
 		"ADLS_storagesilverdevtestsyn_properties_typeProperties_serviceEndpoint": {
-			"value": "https://storagesilverdevtestsyn1.blob.core.windows.net"
+			"value": "@{concat('https://',linkedService().SName,'.blob.core.windows.net/')}"
 		},
 		"syn-entit-devtestsynapse-git-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://storagesilverdevtestsyn1.dfs.core.windows.net"
