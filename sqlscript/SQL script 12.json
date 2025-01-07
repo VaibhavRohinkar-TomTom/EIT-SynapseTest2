@@ -2,7 +2,7 @@
 	"name": "SQL script 12",
 	"properties": {
 		"content": {
-			"query": "SELECT TOP (100) [Col1]\n FROM [dbo].[View1]",
+			"query": "SELECT TOP (100) [Col2]\n FROM [dbo].[View1]",
 			"metadata": {
 				"language": "sql"
 			},
