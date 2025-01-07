@@ -3,6 +3,10 @@
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SparkPoolSmall",
+			"type": "BigDataPoolReference"
+		},
 		"sessionProperties": {
 			"driverMemory": "28g",
 			"driverCores": 4,
@@ -13,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "104b83f6-5dc3-4e02-a4f4-20d607fe32e7"
+				"spark.autotune.trackingId": "b70a6fbb-db70-476e-8b77-9fdf23cd9a42"
 			}
 		},
 		"metadata": {
@@ -25,6 +29,21 @@
 			},
 			"language_info": {
 				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/276b918f-1dfb-441a-a56c-6693d845360b/resourceGroups/rg-entit-devtestsynapse/providers/Microsoft.Synapse/workspaces/syn-entit-devtestsynapse-git/bigDataPools/SparkPoolSmall",
+				"name": "SparkPoolSmall",
+				"type": "Spark",
+				"endpoint": "https://syn-entit-devtestsynapse-git.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SparkPoolSmall",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.4",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
+				"automaticScaleJobs": false
 			},
 			"sessionKeepAliveTimeout": 30
 		},
