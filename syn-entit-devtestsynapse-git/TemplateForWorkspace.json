@@ -421,7 +421,7 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"content": {
-					"query": "select 4234234",
+					"query": "select 5555",
 					"metadata": {
 						"language": "sql"
 					},
