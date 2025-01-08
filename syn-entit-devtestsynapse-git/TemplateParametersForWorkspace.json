@@ -1,0 +1,77 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "syn-entit-devtestsynapse-git"
+		},
+		"syn-entit-devtestsynapse-git-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:syn-entit-devtestsynapse-git.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"Pipeline 1_properties_0_typeProperties": {
+			"value": ""
+		},
+		"AutoResolveIntegrationRuntime_properties_typeProperties_computeProperties": {
+			"value": {
+				"location": "AutoResolve",
+				"dataFlowProperties": {
+					"computeType": "General",
+					"coreCount": 8,
+					"timeToLive": 0
+				}
+			}
+		},
+		"IntegrationRuntime1_properties_typeProperties_computeProperties": {
+			"value": {
+				"location": "AutoResolve",
+				"dataFlowProperties": {
+					"computeType": "General",
+					"coreCount": 8,
+					"timeToLive": 10,
+					"cleanup": false,
+					"customProperties": []
+				},
+				"pipelineExternalComputeScaleProperties": {
+					"timeToLive": 60,
+					"numberOfPipelineNodes": 1,
+					"numberOfExternalNodes": 1
+				}
+			}
+		},
+		"IntegrationRuntime2_properties_typeProperties_computeProperties": {
+			"value": {
+				"location": "AutoResolve",
+				"dataFlowProperties": {
+					"computeType": "General",
+					"coreCount": 8,
+					"timeToLive": 10,
+					"cleanup": false,
+					"customProperties": []
+				},
+				"pipelineExternalComputeScaleProperties": {
+					"timeToLive": 60,
+					"numberOfPipelineNodes": 1,
+					"numberOfExternalNodes": 1
+				}
+			}
+		},
+		"Credential1_properties_typeProperties_resourceId": {
+			"value": "/subscriptions/276b918f-1dfb-441a-a56c-6693d845360b/resourceGroups/rg-entit-synapse/providers/Microsoft.ManagedIdentity/userAssignedIdentities/MI-EntIT-Syn-Prod"
+		},
+		"SQL script 11_properties_content_currentConnection_databaseName": {
+			"value": ""
+		},
+		"SQL script 11_properties_content_currentConnection_poolName": {
+			"value": ""
+		},
+		"SQL script 12_properties_content_currentConnection_databaseName": {
+			"value": ""
+		},
+		"SQL script 12_properties_content_currentConnection_poolName": {
+			"value": ""
+		},
+		"Notebook 1_properties_bigDataPool_referenceName": {
+			"value": "SparkPoolSmall"
+		}
+	}
+}
