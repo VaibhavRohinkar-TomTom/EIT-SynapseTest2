@@ -59,7 +59,7 @@
 			"value": "/subscriptions/276b918f-1dfb-441a-a56c-6693d845360b/resourceGroups/rg-entit-synapse/providers/Microsoft.ManagedIdentity/userAssignedIdentities/MI-EntIT-Syn-Prod"
 		},
 		"SQL script 11_properties_content_currentConnection_databaseName": {
-			"value": ""
+			"value": "SqlDb1"
 		},
 		"SQL script 11_properties_content_currentConnection_poolName": {
 			"value": ""
