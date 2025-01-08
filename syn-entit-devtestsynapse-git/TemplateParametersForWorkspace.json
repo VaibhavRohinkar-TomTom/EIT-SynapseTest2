@@ -62,7 +62,7 @@
 			"value": "SqlDb1"
 		},
 		"SQL script 11_properties_content_currentConnection_poolName": {
-			"value": ""
+			"value": "Built-in"
 		},
 		"SQL script 12_properties_content_currentConnection_databaseName": {
 			"value": ""
