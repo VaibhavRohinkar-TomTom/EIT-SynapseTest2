@@ -17,6 +17,7 @@
 
                 }
         }
+    }
     },
     "Microsoft.Synapse/workspaces/sqlscripts": {
         "properties": {
