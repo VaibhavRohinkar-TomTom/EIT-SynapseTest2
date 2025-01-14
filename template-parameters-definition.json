@@ -3,7 +3,19 @@
         "properties": {
             "bigDataPool": {
                 "referenceName": "="
-            }
+            },
+
+             "metadata": {
+
+                "a365ComputeOptions": {
+
+                        "id": "=",
+
+                         "name": "=",
+
+                        "endpoint": "="
+
+                }
         }
     },
     "Microsoft.Synapse/workspaces/sqlscripts": {
