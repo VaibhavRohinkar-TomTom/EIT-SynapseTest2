@@ -15,6 +15,9 @@
 		"Pipeline 1_properties_0_typeProperties": {
 			"type": "int"
 		},
+		"Pipeline 4_properties_0_typeProperties": {
+			"type": "int"
+		},
 		"AutoResolveIntegrationRuntime_properties_typeProperties_computeProperties": {
 			"type": "object",
 			"defaultValue": {
@@ -81,6 +84,18 @@
 		"Notebook 1_properties_bigDataPool_referenceName": {
 			"type": "string",
 			"defaultValue": "SparkPoolSmall"
+		},
+		"Notebook 1_properties_metadata_a365ComputeOptions_id": {
+			"type": "string",
+			"defaultValue": "/subscriptions/276b918f-1dfb-441a-a56c-6693d845360b/resourceGroups/rg-entit-devtestsynapse/providers/Microsoft.Synapse/workspaces/syn-entit-devtestsynapse-git/bigDataPools/SparkPoolSmall"
+		},
+		"Notebook 1_properties_metadata_a365ComputeOptions_name": {
+			"type": "string",
+			"defaultValue": "SparkPoolSmall"
+		},
+		"Notebook 1_properties_metadata_a365ComputeOptions_endpoint": {
+			"type": "string",
+			"defaultValue": "https://syn-entit-devtestsynapse-git.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SparkPoolSmall"
 		}
 	},
 	"variables": {
@@ -156,6 +171,29 @@
 				"[concat(variables('workspaceId'), '/dataflows/Dataflow1')]",
 				"[concat(variables('workspaceId'), '/integrationRuntimes/IntegrationRuntime1')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/Pipeline 4')]",
+			"type": "Microsoft.Synapse/workspaces/pipelines",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"activities": [
+					{
+						"name": "Wait1",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": "[parameters('Pipeline 4_properties_0_typeProperties')]"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('workspaceName'), '/DelimitedText1')]",
@@ -476,7 +514,7 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "ca97c6b5-6190-41db-beeb-d15ceb48842a"
+						"spark.autotune.trackingId": "eff1a7df-f365-4d3e-8a38-06e242a0a052"
 					}
 				},
 				"metadata": {
@@ -490,10 +528,10 @@
 						"name": "python"
 					},
 					"a365ComputeOptions": {
-						"id": "/subscriptions/276b918f-1dfb-441a-a56c-6693d845360b/resourceGroups/rg-entit-devtestsynapse/providers/Microsoft.Synapse/workspaces/syn-entit-devtestsynapse-git/bigDataPools/SparkPoolSmall",
-						"name": "SparkPoolSmall",
+						"id": "[parameters('Notebook 1_properties_metadata_a365ComputeOptions_id')]",
+						"name": "[parameters('Notebook 1_properties_metadata_a365ComputeOptions_name')]",
 						"type": "Spark",
-						"endpoint": "https://syn-entit-devtestsynapse-git.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SparkPoolSmall",
+						"endpoint": "[parameters('Notebook 1_properties_metadata_a365ComputeOptions_endpoint')]",
 						"auth": {
 							"type": "AAD",
 							"authResource": "https://dev.azuresynapse.net"
@@ -501,15 +539,17 @@
 						"sparkVersion": "3.4",
 						"nodeCount": 10,
 						"cores": 4,
-						"memory": 28
+						"memory": 28,
+						"automaticScaleJobs": false
 					},
 					"sessionKeepAliveTimeout": 30
 				},
 				"cells": [
 					{
 						"cell_type": "code",
+						"metadata": {},
 						"source": [
-							"print(\"TEST123\")"
+							"print(\"TEST1234\")"
 						],
 						"outputs": [],
 						"execution_count": null
@@ -530,6 +570,31 @@
 				"autoScale": {
 					"enabled": true,
 					"maxNodeCount": 10,
+					"minNodeCount": 3
+				},
+				"nodeCount": 10,
+				"nodeSize": "Small",
+				"nodeSizeFamily": "MemoryOptimized",
+				"sparkVersion": "3.4",
+				"isComputeIsolationEnabled": false,
+				"sessionLevelPackagesEnabled": false,
+				"annotations": []
+			},
+			"dependsOn": [],
+			"location": "westeurope"
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SpSmall5N')]",
+			"type": "Microsoft.Synapse/workspaces/bigDataPools",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"autoPause": {
+					"enabled": true,
+					"delayInMinutes": 15
+				},
+				"autoScale": {
+					"enabled": true,
+					"maxNodeCount": 5,
 					"minNodeCount": 3
 				},
 				"nodeCount": 10,

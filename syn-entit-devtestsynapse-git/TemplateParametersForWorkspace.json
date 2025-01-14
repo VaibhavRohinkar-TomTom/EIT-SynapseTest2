@@ -11,6 +11,9 @@
 		"Pipeline 1_properties_0_typeProperties": {
 			"value": ""
 		},
+		"Pipeline 4_properties_0_typeProperties": {
+			"value": ""
+		},
 		"AutoResolveIntegrationRuntime_properties_typeProperties_computeProperties": {
 			"value": {
 				"location": "AutoResolve",
@@ -71,7 +74,16 @@
 			"value": ""
 		},
 		"Notebook 1_properties_bigDataPool_referenceName": {
-			"value": ""
+			"value": "SparkPoolSmall"
+		},
+		"Notebook 1_properties_metadata_a365ComputeOptions_id": {
+			"value": "/subscriptions/276b918f-1dfb-441a-a56c-6693d845360b/resourceGroups/rg-entit-devtestsynapse/providers/Microsoft.Synapse/workspaces/syn-entit-devtestsynapse-git/bigDataPools/SparkPoolSmall"
+		},
+		"Notebook 1_properties_metadata_a365ComputeOptions_name": {
+			"value": "SparkPoolSmall"
+		},
+		"Notebook 1_properties_metadata_a365ComputeOptions_endpoint": {
+			"value": "https://syn-entit-devtestsynapse-git.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SparkPoolSmall"
 		}
 	}
 }
